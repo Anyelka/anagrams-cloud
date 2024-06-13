@@ -15,7 +15,7 @@ jobs:
       - name: Setup GCP Service Account
         uses: google-github-actions/setup-gcloud@v2
         with:
-          project_id: ${env.PROJECT}
+          project_id: ${{env.PROJECT}}
 
       - name: deploy cloud function
         id: deploy
@@ -23,5 +23,5 @@ jobs:
         with:
           name: anagrams
           runtime: java21
-          project_id: ${env.PROJECT}
+          project_id: ${{env.PROJECT}}
           entry_point: functions.CloudFunction
