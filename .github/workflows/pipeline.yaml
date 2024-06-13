@@ -1,0 +1,27 @@
+name: Deploy Cloud Function
+on:
+  push:
+    branches: [ main ]
+env:
+  PROJECT: anagrams-426317
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Setup GCP Service Account
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: ${env.PROJECT}
+
+      - name: deploy cloud function
+        id: deploy
+        uses: google-github-actions/deploy-cloud-functions@main
+        with:
+          name: anagrams
+          runtime: java21
+          project_id: ${env.PROJECT}
+          entry_point: functions.CloudFunction
