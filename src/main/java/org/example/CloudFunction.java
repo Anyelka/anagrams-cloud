@@ -12,7 +12,9 @@ public class CloudFunction implements HttpFunction {
     @Override
     public void service(HttpRequest httpRequest, HttpResponse httpResponse) throws Exception {
         JsonObject body = gson.fromJson(httpRequest.getReader(), JsonObject.class);
-        String inputMessage = body.get("message").getAsString();
-        httpResponse.getWriter().write("Jeeeeeeeej muxik a function! Input message: " + inputMessage);
+        String text1 = body.get("text1").getAsString();
+        String text2 = body.get("text1").getAsString();
+        boolean areAnagrams = Service.areAnagrams(text1, text2);
+        httpResponse.getWriter().write(areAnagrams + "");
     }
 }
