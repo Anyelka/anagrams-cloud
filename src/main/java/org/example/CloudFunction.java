@@ -7,6 +7,6 @@ import com.google.cloud.functions.HttpResponse;
 public class CloudFunction implements HttpFunction {
     @Override
     public void service(HttpRequest httpRequest, HttpResponse httpResponse) throws Exception {
-        System.out.println("Function called");
+        httpResponse.getWriter().write("Jeeeeeeeej muxik a function!");
     }
 }
