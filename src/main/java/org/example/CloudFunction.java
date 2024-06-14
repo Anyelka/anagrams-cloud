@@ -13,8 +13,8 @@ public class CloudFunction implements HttpFunction {
     public void service(HttpRequest httpRequest, HttpResponse httpResponse) throws Exception {
         JsonObject body = gson.fromJson(httpRequest.getReader(), JsonObject.class);
         String text1 = body.get("text1").getAsString();
-        String text2 = body.get("text1").getAsString();
+        String text2 = body.get("text2").getAsString();
         boolean areAnagrams = Service.areAnagrams(text1, text2);
-        httpResponse.getWriter().write(areAnagrams + "");
+        httpResponse.getWriter().write("" + areAnagrams);
     }
 }

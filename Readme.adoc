@@ -1,0 +1,7 @@
+To run cloud function locally:
+
+`./gradlew runFunction -Prun.functionTarget=org.example.CloudFunction -Prun.port=8080`
+
+To test the cloud function locally:
+
+`curl -X POST localhost:8080 -H "Content-Type: application/json" -d '{"text1":"anagram", "text2":"nag a ram" }'`
