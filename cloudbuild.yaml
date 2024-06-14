@@ -1,0 +1,5 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gradle'
+    args: ['build']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args: ['functions', 'deploy', 'anagrams-cloud', '--trigger-http', '--runtime', 'java11', '--source', '.']
