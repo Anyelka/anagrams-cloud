@@ -6,3 +6,4 @@ To run cloud function locally:
 To test the cloud function locally:
 
 `curl -X POST localhost:8080 -H "Content-Type: application/json" -d '{"text1":"anagram", "text2":"nag a ram" }'`
+`curl -X POST localhost:8081 -H "Content-Type: application/json" -d '{"text": "anagram","texts": ["nag a ram", "garaman", "random", "margana"] }'`

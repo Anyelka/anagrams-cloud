@@ -35,6 +35,10 @@ public class AnagramsFunction2 implements HttpFunction {
         List<String> texts = gson.fromJson(textsArray, new TypeToken<List<String>>() {}.getType());
 
         List<String> allAnagrams = Service.getAllAnagrams(text, texts);
-        httpResponse.getWriter().write(allAnagrams.toString());
+
+        String jsonString = new Gson().toJson(allAnagrams);
+
+        httpResponse.setContentType("application/json");
+        httpResponse.getWriter().write(jsonString);
     }
 }
