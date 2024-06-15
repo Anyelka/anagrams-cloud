@@ -1,6 +1,7 @@
 To run cloud function locally:
 
-`./gradlew runFunction -Prun.functionTarget=org.example.CloudFunction -Prun.port=8080`
+`./gradlew runFunction -Prun.functionTarget=org.example.AnagramsFunction1 -Prun.port=8080`
+`./gradlew runFunction -Prun.functionTarget=org.example.AnagramsFunction2 -Prun.port=8081`
 
 To test the cloud function locally:
 
